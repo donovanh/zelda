@@ -1,0 +1,79 @@
+/* Mixins to extend what Compass provides */
+
+=animation($values...)
+  -webkit-animation: $values
+  -moz-animation: $values
+  -o-animation: $values
+  -ms-animation: $values
+  animation: $values
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=text-fill-color($value)
+  -webkit-text-fill-color: $value
+  -moz-text-fill-color: $value
+  -o-text-fill-color: $value
+  -ms-text-fill-color: $value
+  text-fill-color: $value
+
+=text-stroke-color($value)
+  -webkit-stroke-fill-color: $value
+  -moz-stroke-fill-color: $value
+  -o-stroke-fill-color: $value
+  -ms-stroke-fill-color: $value
+  stroke-fill-color: $value
+
+=text-stroke-width($value)
+  -webkit-text-stroke-width: $value
+  -moz-text-stroke-width: $value
+  -o-text-stroke-width: $value
+  -ms-text-stroke-width: $value
+  text-stroke-width: $value
+
+//============================================================
+//
+// arrow
+//
+// @param width           :  px, em
+// @param height          :  px, em
+// @param direction       :  up, down, left, right
+// @param color           :  hex, rgb
+//
+//============================================================
+
+=arrow($width: 20px, $height: 20px, $direction: up, $color: red)
+  
+  width: 0 
+  height: 0
+  
+  // Right
+  @if $direction == right
+    border-top: $height/2 solid transparent
+    border-bottom: $height/2 solid transparent
+    border-left: $width solid $color
+
+  // Left
+  @if $direction == left
+    border-top: $height/2 solid transparent
+    border-bottom: $height/2 solid transparent
+    border-right: $width solid $color
+
+  // Up
+  @if $direction == up
+    border-left: $width/2 solid transparent
+    border-right: $width/2 solid transparent
+    border-bottom: $height solid $color
+
+  // Down
+  @if $direction == down
+    border-left: $width/2 solid transparent
+    border-right: $width/2 solid transparent
+    border-top: $height solid $color

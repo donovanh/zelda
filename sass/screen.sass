@@ -1,0 +1,202 @@
+
+@import compass/reset
+@import compass/css3
+@import mixins
+
+$animationDuration: 5s
+$triangleColour: #ffd200
+$triangleLightColour: #ffe403
+$triangleDarkColour: #ffd200
+$borderColour: #fbb700
+
+body
+  background: #4c9949
+  @include animation(animate-background 6s linear)
+
+
+.zelda-container
+  width: 300px
+  height: 300px
+  margin: 100px auto
+  position: relative
+
+.zeldatext
+  position: absolute
+  top: 50px
+  left: -80px
+  width: 500px
+  height: 220px
+  @include animation(showZeldaText 6.5s linear)
+
+  h1
+    top: 10px
+    font-size: 180px
+    font-family: "EB Garamond"
+    padding-left: 80px
+    @include text-fill-color(#b62f22)
+    @include text-stroke-color(#8b3536)
+    @include text-stroke-width(2px)
+    letter-spacing: -5px
+
+    sup
+      position: absolute
+      top: -50px
+      left: -80px
+      font-size: 280px
+
+    span.closer
+      letter-spacing: -28px
+
+  h2, h3
+    position: absolute
+    text-transform: uppercase
+    font-family: "Old Standard TT"
+    color: #aaa
+    font-size: 40px
+    @include text-fill-color(#ddd)
+    @include text-stroke-color(#8b3536)
+    @include text-stroke-width(0.2px)
+    @include text-shadow(0 0 2px #000)
+
+  h2
+    top: -10px
+    left: 100px
+
+  h3
+    top: 170px
+    left: 100px
+    width: 500px
+
+    a
+      text-decoration: none
+      color: #aaa
+
+.stage
+  width: 300px
+  height: 300px
+  position: absolute
+  @include perspective(800px)
+  @include perspective-origin(50% 190px)
+
+  .triangle
+    position: absolute
+    top: 0
+    left: 75px
+    width: 150px
+    height: 150px
+    @include transform-style(preserve-3d)
+
+    &.one
+      @include animation(rotate $animationDuration infinite linear, introduce-1 5s linear)
+
+    &.two
+      top: 150px
+      left: 0
+      @include animation(rotate $animationDuration infinite linear, introduce-2 5s linear)
+
+    &.three
+      top: 150px
+      left: 150px
+      @include animation(rotate $animationDuration infinite linear, introduce-3 5s linear)
+
+    figure
+      display: block
+      position: absolute
+      @include backface-visibility(hidden)
+
+      &.front
+        +arrow(150px, 150px, up, $triangleLightColour)
+        @include transform(translateZ(20px))
+
+      &.back
+        +arrow(150px, 150px, up, $triangleLightColour)
+        @include transform(rotateY(180deg) translateZ(20px))
+
+      &.side1
+        content: " "
+        display: block
+        position: absolute
+        height: 168px
+        width: 40px
+        background-color: $triangleDarkColour
+        @include transform(translateY(-9px) translateX(18px) rotateY(-90deg) rotateX(26.5deg))
+
+      &.side2
+        content: " "
+        display: block
+        position: absolute
+        height: 168px
+        width: 40px
+        background-color: $triangleDarkColour
+        @include transform(translateY(-9px) translateX(92px) rotateY(90deg) rotateX(26.5deg))
+
+      &.side3
+        content: " "
+        background-color: $triangleDarkColour
+        width: 150px
+        height: 40px
+        @include transform(translateY(130px) rotateX(-90deg))
+
+
+
+@include keyframes(rotate)
+  0%
+    @include transform(rotateY(0))
+  100%
+    @include transform(rotateY(360deg))
+
+@include keyframes(showZeldaText)
+  0%, 80%
+    @include transform(scale(0.6) translateZ(-100px))
+    opacity: 0
+  100%
+    @include transform(scale(1) translateZ(0))
+    opacity: 1
+
+@include keyframes(introduce-1)
+  0%
+    top: -200px
+  45%
+    top: -100px
+    @include transform(rotateY(180deg) rotateX(-180deg))
+  90%, 100%
+    top: 0
+    @include transform(rotateY(360deg) rotateX(-360deg))
+
+@include keyframes(introduce-2)
+  0%
+    left: -150px
+    top: 250px
+  45%
+    left: -75px
+    top: 200px
+    @include transform(rotateY(180deg) rotateX(-180deg))
+  90%, 100%
+    top: 150px
+    left: 0
+    @include transform(rotateY(360deg) rotateX(-360deg))
+
+@include keyframes(introduce-3)
+  0%
+    left: 350px
+    top: 250px
+    -webkit-filter: blur(10px)
+  45% 
+    left: 275px
+    top: 200px
+    @include transform(rotateY(180deg) rotateX(-180deg))
+    -webkit-filter: blur(0px)
+  90%, 100%
+    top: 150px
+    left: 150px
+    @include transform(rotateY(360deg) rotateX(-360deg))
+
+@include keyframes(animate-background)
+  0%
+    background: #000
+  83%
+    background: #000
+  84%
+    background: #fff
+  87%, 100%
+    background: #4c9949
