@@ -156,9 +156,11 @@ body
 @include keyframes(introduce-1)
   0%
     top: -200px
+    opacity: 0
   45%
     top: -100px
     @include transform(rotateY(180deg) rotateX(-180deg))
+    opacity: 1
   90%, 100%
     top: 0
     @include transform(rotateY(360deg) rotateX(-360deg))
@@ -167,10 +169,12 @@ body
   0%
     left: -150px
     top: 250px
+    opacity: 0
   45%
     left: -75px
     top: 200px
     @include transform(rotateY(180deg) rotateX(-180deg))
+    opacity: 1
   90%, 100%
     top: 150px
     left: 0
@@ -180,12 +184,12 @@ body
   0%
     left: 350px
     top: 250px
-    -webkit-filter: blur(10px)
+    opacity: 0
   45% 
     left: 275px
     top: 200px
     @include transform(rotateY(180deg) rotateX(-180deg))
-    -webkit-filter: blur(0px)
+    opacity: 1
   90%, 100%
     top: 150px
     left: 150px
