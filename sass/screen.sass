@@ -10,20 +10,21 @@ $triangleDarkColour: #ffd200
 $borderColour: #fbb700
 
 body
-  background: #409227
+  background: #000
   @include animation(animate-background 6s linear)
 
 
 .zelda-container
-  width: 300px
-  height: 300px
+  width: 768px
+  height: 432px
   margin: 100px auto
   position: relative
+  @include animation(animate-background-picture 6s linear forwards)
 
 .zeldatext
   position: absolute
-  top: 50px
-  left: -80px
+  top: 130px
+  left: 140px
   width: 505px
   height: 220px
   @include animation(showZeldaText 6.5s linear)
@@ -76,6 +77,8 @@ body
 .stage
   width: 300px
   height: 300px
+  left: 220px
+  top: 50px
   position: absolute
   @include perspective(800px)
   @include perspective-origin(50% 190px)
@@ -217,5 +220,14 @@ body
   84%
     background: #fff
   87%, 100%
-    background: #409227
+    background: #000
 
+@include keyframes(animate-background-picture)
+  0%
+    background: #000
+  83%
+    background: #000
+  84%
+    background: #fff
+  87%, 100%
+    background: url(../images/bg.png)
