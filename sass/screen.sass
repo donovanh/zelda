@@ -138,7 +138,16 @@ body
         height: 40px
         @include transform(translateY(130px) rotateX(-90deg))
 
-
+.madeby
+  text-align: center
+  margin-top: 200px
+  bottom: 20px
+  color: #000
+  font-family: "EB Garamond"
+  a
+    color: #000
+    text-decoration: none
+    opacity: 0.5
 
 @include keyframes(rotate)
   0%
@@ -150,6 +159,9 @@ body
   0%, 80%
     @include transform(scale(0.6) translateZ(-100px))
     opacity: 0
+    -webkit-filter: blur(2px)
+  90%
+    -webkit-filter: blur(0)
   100%
     @include transform(scale(1) translateZ(0))
     opacity: 1
@@ -206,13 +218,3 @@ body
   87%, 100%
     background: #409227
 
-.madeby
-  text-align: center
-  margin-top: 200px
-  bottom: 20px
-  color: #000
-  font-family: "EB Garamond"
-  a
-    color: #000
-    text-decoration: none
-    opacity: 0.5
