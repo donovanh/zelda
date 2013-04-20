@@ -1,6 +1,6 @@
 # CSS Zelda intro
 
-A homage to my favourite game ever. This is created using no images. It is created and animated purely using CSS.
+A homage to my favourite game ever. This is created and animated using CSS & HTML.
 
 Best viewed in a recent Chrome, Safari, or Firefox, as it makes use of some fancy CSS stuff.
 
