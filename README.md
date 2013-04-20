@@ -10,7 +10,7 @@ Best viewed in a recent Chrome, Safari, or Firefox, as it makes use of some fanc
 
 ## Preview
 
-<a href="http://hop.ie/zelda"><img src="http://hop.ie/images/posts/zelda.png" alt="See it in action" /></a>
+<a href="http://hop.ie/zelda"><img src="http://hop.ie/images/posts/zelda.png?v=2" alt="See it in action" /></a>
 
 ## Tutorial
 
