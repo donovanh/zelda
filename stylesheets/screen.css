@@ -140,13 +140,13 @@ body {
   position: absolute;
   text-transform: uppercase;
   font-family: "Old Standard TT";
-  color: #aaaaaa;
+  color: #eeeeee;
   font-size: 40px;
-  -webkit-text-fill-color: #dddddd;
-  -moz-text-fill-color: #dddddd;
-  -o-text-fill-color: #dddddd;
-  -ms-text-fill-color: #dddddd;
-  text-fill-color: #dddddd;
+  -webkit-text-fill-color: #eeeeee;
+  -moz-text-fill-color: #eeeeee;
+  -o-text-fill-color: #eeeeee;
+  -ms-text-fill-color: #eeeeee;
+  text-fill-color: #eeeeee;
   -webkit-stroke-fill-color: #8b3536;
   -moz-stroke-fill-color: #8b3536;
   -o-stroke-fill-color: #8b3536;
@@ -173,12 +173,12 @@ body {
 /* line 72, ../sass/screen.sass */
 .zeldatext h3 a {
   text-decoration: none;
-  color: #aaaaaa;
-  -webkit-text-fill-color: #dddddd;
-  -moz-text-fill-color: #dddddd;
-  -o-text-fill-color: #dddddd;
-  -ms-text-fill-color: #dddddd;
-  text-fill-color: #dddddd;
+  color: #eeeeee;
+  -webkit-text-fill-color: #eeeeee;
+  -moz-text-fill-color: #eeeeee;
+  -o-text-fill-color: #eeeeee;
+  -ms-text-fill-color: #eeeeee;
+  text-fill-color: #eeeeee;
 }
 
 /* line 77, ../sass/screen.sass */
