@@ -90,6 +90,7 @@ body
     width: 150px
     height: 150px
     @include transform-style(preserve-3d)
+    @include transform-origin(75px)
 
     &.one
       @include animation(rotate $animationDuration infinite linear, introduce-1 5s linear)
