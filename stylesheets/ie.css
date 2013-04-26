@@ -1,5 +1,23 @@
-/* Welcome to Compass. Use this file to write IE specific override styles.
- * Import this file using the following HTML or equivalent:
- * <!--[if IE]>
- *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
- * <![endif]--> */
+/* line 1, ../sass/ie.sass */
+body {
+  -ms-animation: none;
+}
+
+/* line 4, ../sass/ie.sass */
+.zelda-container {
+  -ms-animation: none;
+  animation: none;
+  background: url(http://hop.ie/images/posts/zelda.png) no-repeat;
+}
+/* line 9, ../sass/ie.sass */
+.zelda-container * {
+  display: none;
+}
+/* line 12, ../sass/ie.sass */
+.zelda-container:after {
+  content: "Sorry, brave Internet Explorer. This demo relies on 3D transforms that are not yet well supported in all browsers.";
+  color: #aaaaaa;
+  font-size: 16px;
+  position: absolute;
+  bottom: -100px;
+}
