@@ -19,6 +19,12 @@ body
   height: 432px
   margin: 100px auto
   position: relative
+  
+.background-holder
+  position: absolute
+  width: 768px
+  height: 432px
+  background: url(../images/bg.png)
   @include animation(animate-background-picture 6s linear forwards)
 
 .zeldatext
@@ -226,11 +232,7 @@ body
     background: #000
 
 @include keyframes(animate-background-picture)
-  0%
-    background: #000
-  83%
-    background: #000
-  84%
-    background: #fff
-  87%, 100%
-    background: url(../images/bg.png)
+  0%,86%
+    opacity: 0
+  86.01%, 100%
+    opacity: 1
